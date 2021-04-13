@@ -1,0 +1,426 @@
+/* imports */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* global rules */
+:root {
+    --headerColor: #fafafa;
+    --headerHeight: 80px;
+    --accent: #ff9100;
+    --darkGrey: #333;
+    --mediumGrey: #666;
+    --lightGrey: #aaa;
+    --lighterGrey: #ccc;
+    --paddingDesktop: 0 72px;
+    --paddingMobile: 0 36px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: "Poppins", Montserrat, Arial, sans-serif;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--headerHeight);
+    background-color: var(--headerColor);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--paddingDesktop);
+    z-index: 2;
+}
+
+footer {
+    text-align: center;
+}
+
+/* rules */
+.containerPadding {
+    padding: var(--paddingDesktop);
+}
+
+.logo {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.logoPic {
+    font-size: 40px;
+    display: flex;
+}
+
+.orangeText {
+    color: var(--accent);
+}
+
+.logoName {
+    font-size: 20px;
+    margin-left: 16px;
+}
+
+.navLinks {
+    display: flex;
+}
+
+.navLink {
+    text-decoration: none;
+    color: var(--mediumGrey);
+    margin-left: 32px;
+    font-size: 14px;
+}
+
+.selectedNavLink {
+    color: var(--darkGrey);
+    font-weight: 500;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.selectedNavLink:hover {
+    color: var(--accent);
+}
+
+.selectedNavLink::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: var(--accent);
+    width: 100%;
+    height: 2px;
+}
+
+.navLinkContainer {
+    display: flex;
+}
+
+.containerBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.heroSection {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.titleText {
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    line-height: 40px;
+}
+
+.name {
+    margin-top: 30px;
+}
+
+.subHeading {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--lightGrey);
+    margin: 8px 0;
+}
+
+.paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--mediumGrey);
+}
+
+.aboutMe {
+    margin-top: 12px;
+}
+
+.roundedAnchor {
+    border-radius: 20px;
+}
+
+.buttonCTA {
+    width: max-content;
+    padding: 6px 24px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 2px solid var(--accent);
+    background-color: white;
+    font-family: "Poppins", Montserrat, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 10px 10px -8px rgba(255, 145, 0, 0.22);
+    user-select: none;
+}
+
+.buttonCTA:focus {
+    outline: none;
+}
+
+.buttonCTA:hover {
+    background-color: var(--accent);
+    color: white;
+    box-shadow: none;
+}
+
+.workSection {
+    padding: 24px 0px;
+    background-color: var(--headerColor);
+}
+
+.containerBlockHeading {
+    font-size: 22px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: max-content;
+}
+
+.containerBlockHeading::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: -4px;
+    height: 3px;
+    background-color: var(--lighterGrey);
+}
+
+.containerBlockHeading::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40%;
+    bottom: -4px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+p a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* the projects grid */
+
+.projects {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+}
+
+.project-tile {
+    height: 256px;
+    background-color: var(--lighterGrey);
+    border-radius: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+.projectImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    border-radius: 16px;
+}
+
+.blackGradientOverlay {
+    position: absolute;
+    text-align: center;
+    height: 40%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 18px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    border-radius: 0px 0px 16px 16px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.projectTitle {
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    height: max-content;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 18px;
+    color: white;
+    padding: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 1;
+    user-select: none;
+    transition: opacity 0.3s ease;
+}
+
+.project-tile:hover .blackGradientOverlay {
+    opacity: 0;
+}
+
+.project-tile:hover .projectTitle {
+    opacity: 0;
+}
+
+.greyContainer {
+    background-color: var(--headerColor);
+    height: 528px;
+}
+
+.contactContainer {
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.noTopMargin {
+    margin-top: 0px;
+}
+
+.contactIconContainer {
+    width: 260px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.contactIconContainer ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0px;
+    font-size: 18px;
+}
+
+.contactIconContainer ul li {
+    display: inline;
+}
+
+.contactIconContainer ul li a {
+    color: var(--darkGrey);
+    transition: color 0.3s ease-in-out;
+}
+
+.contactIconContainer ul li a:hover {
+    color: var(--accent);
+}
+
+/* responsiveness */
+
+@media (min-width: 1200px) {
+    .project-tile {
+        grid-column: span 4;
+        height: 16vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .project-tile {
+        grid-column: span 6;
+        height: 24vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .project-tile {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-tile {
+        grid-column: span 12;
+        height: 44vw;
+    }
+    .logoPic {
+        font-size: 34px;
+    }
+    .logoName {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: var(--paddingMobile);
+    }
+    .sectionContainer {
+        padding: var(--paddingMobile);
+    }
+    .project-tile {
+        grid-column: span 12;
+    }
+    .projects {
+        grid-column-gap: 0;
+        grid-row-gap: 32px;
+    }
+    .projectTitle {
+        font-size: 14px;
+    }
+    .blackGradientOverlay {
+        height: 50%;
+    }
+    .subHeading {
+        margin-top: 16px;
+    }
+    .containerPadding {
+        padding: var(--paddingMobile);
+    }
+}
+
+@media (max-width: 320px) {
+    .project-tile {
+        grid-column: span 12;
+        height: 34vw;
+    }
+}
+
+/* project images */
+.project1 {
+    background: #143083
+        url("../assets/images/Chester\ bennington\ -\ A\ tribute\ page.jpg")
+        no-repeat top/cover;
+}
+
+.project2 {
+    background: #323336
+        url("../assets/images/F\ R\ I\ E\ N\ D\ S\ Trivia\ Survey.jpg")
+        no-repeat top/cover;
+}
+
+.project3 {
+    background: #808080 url("../assets/images/Product\ Landing\ Page.jpg")
+        no-repeat top/cover;
+}
+
+.project4 {
+    background: #eeeeee
+        url("../assets/images/Technical\ Documentation\ Page.png") no-repeat
+        top/cover;
+}
