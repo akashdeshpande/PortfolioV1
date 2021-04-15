@@ -8,6 +8,11 @@
         nav.classList.toggle('showNavLinks');
     })
 
+    // test to see if navlinks close on clicking
+    navLinks.addEventListener('click', () => {
+        nav.classList.remove('showNavLinks');
+    })
+
     
     // for auto highlight menu
     const sections = document.querySelectorAll('section');

@@ -51,6 +51,7 @@ footer {
     display: flex;
     align-items: center;
     margin-left: 72px;
+    user-select: none;
 }
 
 .logoPic {
