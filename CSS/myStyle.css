@@ -34,7 +34,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--paddingDesktop);
     z-index: 2;
 }
 
@@ -51,6 +50,7 @@ footer {
     font-weight: 600;
     display: flex;
     align-items: center;
+    margin-left: 72px;
 }
 
 .logoPic {
@@ -67,8 +67,14 @@ footer {
     margin-left: 16px;
 }
 
+.hamburgerMenu {
+    display: none;
+    margin-right: 72px;
+}
+
 .navLinks {
     display: flex;
+    margin-right: 72px;
 }
 
 .navLink {
@@ -348,6 +354,25 @@ p a {
 }
 
 @media (max-width: 992px) {
+    .hamburgerMenu {
+        font-size: 18px;
+        display: flex;
+    }
+    .navLinks {
+        position: absolute;
+        flex-direction: column;
+        top: 80px;
+        height: calc(100vh - 80px);
+        background-color: rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: space-around;
+        width: 50vw;
+        margin-right: 0px;
+        right: -50vw;
+    }
+    .navLink {
+        margin-left: 0px;
+    }
     .project-tile {
         grid-column: span 6;
     }
@@ -367,8 +392,15 @@ p a {
 }
 
 @media (max-width: 576px) {
-    header {
-        padding: var(--paddingMobile);
+    .logo {
+        margin: var(--paddingMobile);
+    }
+    .hamburgerMenu {
+        margin: var(--paddingMobile);
+    }
+    .navLinks {
+        width: 100vw;
+        right: -100vw;
     }
     .sectionContainer {
         padding: var(--paddingMobile);
@@ -423,4 +455,8 @@ p a {
     background: #eeeeee
         url("../assets/images/Technical\ Documentation\ Page.png") no-repeat
         top/cover;
+}
+
+.showNavLinks {
+    right: 0px;
 }
